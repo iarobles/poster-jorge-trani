@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <div class="brand">Jorge Trani</div>
+    </header>
+    <div id="overlay" class="overlay"></div>
+    <nav id="sidebar" class="sidebar">
+        <a href="topicos.html">Tópicos</a>
+        <a href="red-completa/index.html">Redes de coautorías</a>
+        <a href="tabla-resultados.html" class="active">Tabla de resultados</a>
+        <a href="referencias.html">Referencias</a>
+    </nav>
+    <main>
+        <h1>Tabla de Resultados</h1>
+
+        <div class="table-container">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Tópico</th>
+                        <th>Clasificación</th>
+                        <th>Mejor modelo</th>
+                        <th>β (año⁻¹)</th>
+                        <th>γ (año⁻¹)</th>
+                        <th>R₀</th>
+                        <th>NRMSE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ANFIS</td>
+                        <td>Decadencia</td>
+                        <td>SI</td>
+                        <td class="numeric">0.3824</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">0.0527</td>
+                    </tr>
+                    <tr>
+                        <td>BPEL</td>
+                        <td>Decadencia</td>
+                        <td>SI</td>
+                        <td class="numeric">0.7579</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">0.0545</td>
+                    </tr>
+                    <tr>
+                        <td>DHT</td>
+                        <td>Decadencia</td>
+                        <td>SI</td>
+                        <td class="numeric">0.4924</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">0.0874</td>
+                    </tr>
+                    <tr>
+                        <td>OLAP</td>
+                        <td>Decadencia</td>
+                        <td>SI</td>
+                        <td class="numeric">0.2598</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">—</td>
+                        <td class="numeric">0.0275</td>
+                    </tr>
+                    <tr>
+                        <td>GP</td>
+                        <td>Tendencia</td>
+                        <td>SIS</td>
+                        <td class="numeric">0.1466</td>
+                        <td class="numeric">0.0100</td>
+                        <td class="numeric">14.665</td>
+                        <td class="numeric">0.0435</td>
+                    </tr>
+                    <tr>
+                        <td>GNN</td>
+                        <td>Tendencia</td>
+                        <td>SIS</td>
+                        <td class="numeric">0.1866</td>
+                        <td class="numeric">0.0100</td>
+                        <td class="numeric">18.656</td>
+                        <td class="numeric">0.1523</td>
+                    </tr>
+                    <tr>
+                        <td>TML</td>
+                        <td>Tendencia</td>
+                        <td>SIS</td>
+                        <td class="numeric">1.5675</td>
+                        <td class="numeric">0.5444</td>
+                        <td class="numeric">2.879</td>
+                        <td class="numeric">0.1080</td>
+                    </tr>
+                    <tr>
+                        <td>QML</td>
+                        <td>Tendencia</td>
+                        <td>SIS</td>
+                        <td class="numeric">0.3147</td>
+                        <td class="numeric">0.0100</td>
+                        <td class="numeric">31.473</td>
+                        <td class="numeric">0.0642</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">Tabla 1: Resultados del ajuste de modelos epidemiológicos a los ocho tópicos.</p>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
