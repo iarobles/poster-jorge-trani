@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
     <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]--> <!-- js/default.js -->
@@ -42,10 +41,10 @@
     </nav>
     <script src="script.js"></script>
 
-    <div class="sigma-parent">
-        <div class="sigma-expand" id="sigma-canvas"></div>
-    </div>
+    <button id="show-mainpanel-btn" class="panel-toggle-btn show-btn" aria-label="Mostrar panel"
+        style="display: none;">➤</button>
     <div id="mainpanel">
+        <button id="hide-mainpanel-btn" class="panel-toggle-btn" aria-label="Ocultar panel">◀</button>
         <table class="topic-table">
             <thead>
                 <tr>
@@ -101,6 +100,11 @@
             <a href="pdf/red-coautorias.pdf" target="_blank">Descargar PDF</a>
         </div>
     </div>
+
+    <div class="sigma-parent">
+        <div class="sigma-expand" id="sigma-canvas"></div>
+    </div>
+
     <div id="zoom">
         <div class="z" rel="in"></div>
         <div class="z" rel="out"></div>
@@ -130,21 +134,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-21293169-4']);
-        _gaq.push(['_setDomainName', 'none']);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
 </body>
 
 </html>

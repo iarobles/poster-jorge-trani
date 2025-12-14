@@ -35,6 +35,7 @@ body {
 }
 
 .sigma-expand {
+
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -241,7 +242,8 @@ canvas#sigma_bg_1 {
 	background: var(--bg-card);
 	/* background-color: rgba(255, 255, 255, 0.8); */
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	z-index: 20;
+	z-index: 2000;
+	/* Boosted to ensure it's above everything */
 	position: fixed;
 	top: 0;
 	color: var(--text-main);
@@ -590,6 +592,7 @@ canvas#sigma_bg_1 {
 table.topic-table {
 	border-collapse: collapse;
 	margin: 5px;
+	margin-top: 40px;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 	min-width: 200px;
@@ -625,4 +628,86 @@ table.topic-table {
 	height: 16px;
 	vertical-align: middle;
 	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Collapsible Main Panel Styles */
+#mainpanel {
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#mainpanel.collapsed {
+	transform: translateX(-100%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.panel-toggle-btn {
+	background: var(--bg-card);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: var(--text-main);
+	cursor: pointer;
+	font-size: 16px;
+	padding: 5px 10px;
+	z-index: 2100;
+	/* Increased to be above overlapping elements but below potential alerts */
+}
+
+#hide-mainpanel-btn {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	opacity: 0.7;
+}
+
+#hide-mainpanel-btn:hover {
+	opacity: 1;
+}
+
+#show-mainpanel-btn {
+	position: fixed;
+	top: 120px;
+	/* Aligned with original mainpanel top margin */
+	left: 10px;
+	padding: 10px;
+	border-radius: 4px;
+	background: var(--bg-card);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+	#mainpanel {
+		position: relative;
+		width: 100%;
+		max-width: none;
+		margin: 0 auto;
+		top: auto;
+		left: auto;
+		transform: none !important;
+		opacity: 1 !important;
+		margin-top: 80px;
+		/* Adjust for fixed header */
+		margin-left: 0;
+		border: none;
+		background: transparent;
+	}
+
+	#mainpanel .col {
+		width: 100%;
+		padding: 10px;
+	}
+
+	/* Hide toggle buttons on mobile */
+	#hide-mainpanel-btn,
+	#show-mainpanel-btn {
+		display: none !important;
+	}
+
+	/* Ensure table is centered and looks good */
+	table.topic-table {
+		margin: 0 auto;
+		width: 95%;
+	}
 }

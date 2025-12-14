@@ -116,15 +116,15 @@ header {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  visibility: hidden;
-  transition: var(--transition);
+  transition: opacity 0.3s ease;
   z-index: 1000;
   backdrop-filter: blur(2px);
+  display: none;
 }
 
 .overlay.active {
+  display: block;
   opacity: 1;
-  visibility: visible;
 }
 
 /* Main Content */
