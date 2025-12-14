@@ -750,3 +750,41 @@ table.topic-table {
 	opacity: 1;
 	transform: scale(1.1);
 }
+
+/* Loading Indicator */
+#graph-loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 1000;
+	pointer-events: none;
+	/* Non-blocking */
+}
+
+.loader-spinner {
+	border: 5px solid rgba(0, 0, 0, 0.1);
+	border-top: 5px solid var(--secondary, #3b82f6);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	animation: spin 1s linear infinite;
+	margin: 0 auto 10px auto;
+}
+
+.loader-text {
+	color: var(--text-main, #333);
+	font-weight: 500;
+	font-size: 14px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
