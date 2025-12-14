@@ -21,6 +21,14 @@
   padding: 0;
 }
 
+/* Enlaces normales */
+a {
+  color: #4da6ff;
+  /* azul clarito */
+  text-decoration: none;
+}
+
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-dark);
