@@ -82,7 +82,7 @@ header {
   background: var(--bg-card);
   padding-top: 5rem;
   transition: var(--transition);
-  z-index: 1001;
+  z-index: 10000;
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;

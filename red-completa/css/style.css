@@ -41,7 +41,8 @@ body {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: var(--bg-dark);
+	background-color: #ffffff;
+	/* Changed to white */
 	background-position: center center;
 	background-repeat: no-repeat;
 	-webkit-touch-callout: none;
@@ -52,14 +53,34 @@ body {
 	user-select: none;
 }
 
+/* ... existing code ... */
+
+@media screen and (max-width: 768px) {
+
+	/* Reverted static layout - keep floating but ensure it fits screen */
+	#mainpanel {
+		width: 90%;
+		max-width: 250px;
+		/* Restored original max-width */
+		/* Ensure it's not overriding the collapsed state logic */
+	}
+
+	/* Ensure toggle buttons are visible on mobile */
+	#hide-mainpanel-btn,
+	#show-mainpanel-btn {
+		display: block;
+		/* Restored visibility */
+	}
+}
+
 canvas#sigma_bg_1 {
 	display: none;
 }
 
 #attributepane {
-	display: block;
 	display: none;
-	position: absolute;
+	position: fixed;
+	/* Changed to fixed as requested */
 	height: auto;
 	bottom: 0;
 	top: 100px;
@@ -71,7 +92,7 @@ canvas#sigma_bg_1 {
 	/* background-color: rgba(255, 255, 255, 0.8); */
 	border-left: 1px solid rgba(255, 255, 255, 0.1);
 	padding: 0px 18px 0px 18px;
-	z-index: 1;
+	z-index: 2000;
 	color: var(--text-main);
 }
 
@@ -146,7 +167,7 @@ canvas#sigma_bg_1 {
 	font-size: 14px;
 	cursor: default;
 	padding-bottom: 10px;
-	padding-top: 18px;
+	padding-top: 0px;
 	font-weight: bold;
 }
 
@@ -679,35 +700,53 @@ table.topic-table {
 
 @media screen and (max-width: 768px) {
 	#mainpanel {
-		position: relative;
-		width: 100%;
-		max-width: none;
-		margin: 0 auto;
-		top: auto;
-		left: auto;
-		transform: none !important;
-		opacity: 1 !important;
-		margin-top: 80px;
-		/* Adjust for fixed header */
-		margin-left: 0;
-		border: none;
-		background: transparent;
+		/* Ensure panel fits on small screens but remains floating */
+		width: 90%;
+		max-width: 250px;
 	}
 
-	#mainpanel .col {
-		width: 100%;
-		padding: 10px;
-	}
-
-	/* Hide toggle buttons on mobile */
-	#hide-mainpanel-btn,
+	/* Adjust show button position if needed for mobile */
 	#show-mainpanel-btn {
-		display: none !important;
+		top: 85px;
+		/* Slightly lower than header */
+		left: 5px;
 	}
+}
 
-	/* Ensure table is centered and looks good */
-	table.topic-table {
-		margin: 0 auto;
-		width: 95%;
-	}
+/* Close Button Styling */
+.close-header {
+	cursor: pointer;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: color 0.2s ease;
+}
+
+.close-header:hover {
+	color: var(--secondary, #3b82f6);
+	/* Use secondary color or fallback blue */
+}
+
+.close-header .back-text {
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	text-align: left;
+}
+
+.close-header .close-icon {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1;
+	opacity: 0.7;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.close-header:hover .close-icon {
+	opacity: 1;
+	transform: scale(1.1);
 }
