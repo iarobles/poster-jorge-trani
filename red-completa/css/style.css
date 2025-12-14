@@ -595,6 +595,10 @@ table.topic-table {
 	min-width: 200px;
 }
 
+.table-download-button {
+	text-align: center;
+}
+
 .topic-table th,
 .topic-table td {
 	padding: 10px 14px;
